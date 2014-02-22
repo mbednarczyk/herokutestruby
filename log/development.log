@@ -1,0 +1,283 @@
+  [1m[36m (5.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (3.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateGists (20140221190357)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "gists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "snippet" text, "lang" varchar(255), "description" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140221190357"]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-21 20:04:22 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/student/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/templates/rails/welcome/index.html.erb (1.8ms)
+Completed 200 OK in 100ms (Views: 29.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-21 20:06:13 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/student/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/templates/rails/welcome/index.html.erb (0.1ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-21 20:06:14 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/student/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/templates/rails/welcome/index.html.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-21 20:06:14 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/student/.rvm/gems/ruby-2.1.0/gems/railties-4.0.3/lib/rails/templates/rails/welcome/index.html.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gists" for 127.0.0.1 at 2014-02-21 20:07:59 +0100
+Processing by GistsController#index as HTML
+  [1m[35mGist Load (0.2ms)[0m  SELECT "gists".* FROM "gists"
+  Rendered gists/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 1061ms (Views: 1058.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-21 20:08:39 +0100
+Processing by GistsController#index as HTML
+  [1m[36mGist Load (0.4ms)[0m  [1mSELECT "gists".* FROM "gists"[0m
+  Rendered gists/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 12ms (Views: 9.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-21 20:08:41 +0100
+Processing by GistsController#index as HTML
+  [1m[35mGist Load (0.3ms)[0m  SELECT "gists".* FROM "gists"
+  Rendered gists/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 26ms (Views: 23.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-21 20:08:42 +0100
+Processing by GistsController#index as HTML
+  [1m[36mGist Load (0.5ms)[0m  [1mSELECT "gists".* FROM "gists"[0m
+  Rendered gists/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 26ms (Views: 24.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/gists/new" for 127.0.0.1 at 2014-02-21 20:08:44 +0100
+Processing by GistsController#new as HTML
+  Rendered gists/_form.html.erb (132.4ms)
+  Rendered gists/new.html.erb within layouts/application (142.5ms)
+Completed 200 OK in 159ms (Views: 156.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/gists" for 127.0.0.1 at 2014-02-21 20:08:59 +0100
+Processing by GistsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"56lC/WqtZ7g7dwdLM1JjQg9HEsO0vsIqn1r6wQ9p7Pk=", "gist"=>{"snippet"=>"def\r\nnew\r\nend", "lang"=>"rb", "description"=>"dasdasda"}, "commit"=>"Create Gist"}
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (55.9ms)[0m  [1mINSERT INTO "gists" ("created_at", "description", "lang", "snippet", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 21 Feb 2014 19:08:59 UTC +00:00], ["description", "dasdasda"], ["lang", "rb"], ["snippet", "def\r\nnew\r\nend"], ["updated_at", Fri, 21 Feb 2014 19:08:59 UTC +00:00]]
+  [1m[35m (21.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/gists/1
+Completed 302 Found in 83ms (ActiveRecord: 77.2ms)
+
+
+Started GET "/gists/1" for 127.0.0.1 at 2014-02-21 20:09:00 +0100
+Processing by GistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGist Load (0.3ms)[0m  [1mSELECT "gists".* FROM "gists" WHERE "gists"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered gists/show.html.erb within layouts/application (230.0ms)
+Completed 200 OK in 287ms (Views: 235.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/gists/1/edit" for 127.0.0.1 at 2014-02-21 20:09:05 +0100
+Processing by GistsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mGist Load (0.2ms)[0m  SELECT "gists".* FROM "gists" WHERE "gists"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered gists/_form.html.erb (7.9ms)
+  Rendered gists/edit.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 26ms (Views: 18.5ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/gists/1" for 127.0.0.1 at 2014-02-21 20:09:12 +0100
+Processing by GistsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"56lC/WqtZ7g7dwdLM1JjQg9HEsO0vsIqn1r6wQ9p7Pk=", "gist"=>{"snippet"=>"def\r\nnew\r\nend", "lang"=>"rb", "description"=>"marek"}, "commit"=>"Update Gist", "id"=>"1"}
+  [1m[36mGist Load (0.2ms)[0m  [1mSELECT "gists".* FROM "gists" WHERE "gists"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "gists" SET "description" = ?, "updated_at" = ? WHERE "gists"."id" = 1[0m  [["description", "marek"], ["updated_at", Fri, 21 Feb 2014 19:09:12 UTC +00:00]]
+  [1m[35m (4.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/gists/1
+Completed 302 Found in 13ms (ActiveRecord: 6.1ms)
+
+
+Started GET "/gists/1" for 127.0.0.1 at 2014-02-21 20:09:12 +0100
+Processing by GistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGist Load (0.2ms)[0m  [1mSELECT "gists".* FROM "gists" WHERE "gists"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered gists/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/gists" for 127.0.0.1 at 2014-02-21 20:09:14 +0100
+Processing by GistsController#index as HTML
+  [1m[35mGist Load (0.4ms)[0m  SELECT "gists".* FROM "gists"
+  Rendered gists/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/gists/1" for 127.0.0.1 at 2014-02-21 20:09:22 +0100
+Processing by GistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGist Load (0.3ms)[0m  [1mSELECT "gists".* FROM "gists" WHERE "gists"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered gists/show.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 26ms (Views: 19.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/gists" for 127.0.0.1 at 2014-02-21 20:09:23 +0100
+Processing by GistsController#index as HTML
+  [1m[35mGist Load (0.3ms)[0m  SELECT "gists".* FROM "gists"
+  Rendered gists/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/gists/1/edit" for 127.0.0.1 at 2014-02-21 20:09:24 +0100
+Processing by GistsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGist Load (0.2ms)[0m  [1mSELECT "gists".* FROM "gists" WHERE "gists"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered gists/_form.html.erb (7.9ms)
+  Rendered gists/edit.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 35ms (Views: 30.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/gists" for 127.0.0.1 at 2014-02-21 20:09:25 +0100
+Processing by GistsController#index as HTML
+  [1m[35mGist Load (3.9ms)[0m  SELECT "gists".* FROM "gists"
+  Rendered gists/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 23ms (Views: 18.3ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/gists/new" for 127.0.0.1 at 2014-02-21 20:09:26 +0100
+Processing by GistsController#new as HTML
+  Rendered gists/_form.html.erb (9.9ms)
+  Rendered gists/new.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 33ms (Views: 32.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/gists" for 127.0.0.1 at 2014-02-21 20:09:31 +0100
+Processing by GistsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"56lC/WqtZ7g7dwdLM1JjQg9HEsO0vsIqn1r6wQ9p7Pk=", "gist"=>{"snippet"=>"def", "lang"=>"sdaf", "description"=>"sadfg"}, "commit"=>"Create Gist"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "gists" ("created_at", "description", "lang", "snippet", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Fri, 21 Feb 2014 19:09:31 UTC +00:00], ["description", "sadfg"], ["lang", "sdaf"], ["snippet", "def"], ["updated_at", Fri, 21 Feb 2014 19:09:31 UTC +00:00]]
+  [1m[36m (4.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/gists/2
+Completed 302 Found in 8ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/gists/2" for 127.0.0.1 at 2014-02-21 20:09:31 +0100
+Processing by GistsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mGist Load (0.1ms)[0m  SELECT "gists".* FROM "gists" WHERE "gists"."id" = ? LIMIT 1  [["id", "2"]]
+  Rendered gists/show.html.erb within layouts/application (18.7ms)
+Completed 500 Internal Server Error in 21ms
+
+ActionView::Template::Error (Traceback (most recent call last):
+  File "/home/student/.rvm/gems/ruby-2.1.0/gems/pygments.rb-0.5.4/lib/pygments/mentos.py", line 303, in start
+    res = self.get_data(method, lexer, args, kwargs, text)
+  File "/home/student/.rvm/gems/ruby-2.1.0/gems/pygments.rb-0.5.4/lib/pygments/mentos.py", line 171, in get_data
+    res = self.highlight_text(text, lexer, formatter_name, args, _convert_keys(opts))
+  File "/home/student/.rvm/gems/ruby-2.1.0/gems/pygments.rb-0.5.4/lib/pygments/mentos.py", line 122, in highlight_text
+    lexer = self.return_lexer(lexer, args, kwargs, code)
+  File "/home/student/.rvm/gems/ruby-2.1.0/gems/pygments.rb-0.5.4/lib/pygments/mentos.py", line 79, in return_lexer
+    return lexers.get_lexer_by_name(lexer, **inputs)
+  File "/home/student/.rvm/gems/ruby-2.1.0/gems/pygments.rb-0.5.4/vendor/pygments-main/pygments/lexers/__init__.py", line 81, in get_lexer_by_name
+    raise ClassNotFound('no lexer for alias %r found' % _alias)
+ClassNotFound: no lexer for alias 'sdaf' found
+):
+     6: <p>
+     7:   <strong>Snippet:</strong>
+     8: </p>
+     9: <%= raw Pygments.highlight(@gist.snippet, lexer: @gist.lang) %>
+    10: <p>
+    11:   <strong>Description:</strong>
+    12:   <%= @gist.description %>
+  app/views/gists/show.html.erb:9:in `_app_views_gists_show_html_erb___188834494_87451250'
+
+
+  Rendered /home/student/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /home/student/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /home/student/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (21.3ms)
+
+
+Started POST "/gists" for 127.0.0.1 at 2014-02-21 20:09:41 +0100
+Processing by GistsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"56lC/WqtZ7g7dwdLM1JjQg9HEsO0vsIqn1r6wQ9p7Pk=", "gist"=>{"snippet"=>"def", "lang"=>"rb", "description"=>"sadfg"}, "commit"=>"Create Gist"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "gists" ("created_at", "description", "lang", "snippet", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Fri, 21 Feb 2014 19:09:41 UTC +00:00], ["description", "sadfg"], ["lang", "rb"], ["snippet", "def"], ["updated_at", Fri, 21 Feb 2014 19:09:41 UTC +00:00]]
+  [1m[36m (4.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/gists/3
+Completed 302 Found in 16ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/gists/3" for 127.0.0.1 at 2014-02-21 20:09:41 +0100
+Processing by GistsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mGist Load (0.1ms)[0m  SELECT "gists".* FROM "gists" WHERE "gists"."id" = ? LIMIT 1  [["id", "3"]]
+  Rendered gists/show.html.erb within layouts/application (273.2ms)
+Completed 200 OK in 279ms (Views: 277.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/gists" for 127.0.0.1 at 2014-02-21 20:09:43 +0100
+Processing by GistsController#index as HTML
+  [1m[36mGist Load (0.2ms)[0m  [1mSELECT "gists".* FROM "gists"[0m
+  Rendered gists/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 28ms (Views: 26.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/gists/new" for 127.0.0.1 at 2014-02-21 20:09:45 +0100
+Processing by GistsController#new as HTML
+  Rendered gists/_form.html.erb (7.8ms)
+  Rendered gists/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 18ms (Views: 14.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/gists" for 127.0.0.1 at 2014-02-21 20:10:00 +0100
+Processing by GistsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"56lC/WqtZ7g7dwdLM1JjQg9HEsO0vsIqn1r6wQ9p7Pk=", "gist"=>{"snippet"=>"public class", "lang"=>"java", "description"=>"11"}, "commit"=>"Create Gist"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "gists" ("created_at", "description", "lang", "snippet", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 21 Feb 2014 19:10:00 UTC +00:00], ["description", "11"], ["lang", "java"], ["snippet", "public class"], ["updated_at", Fri, 21 Feb 2014 19:10:00 UTC +00:00]]
+  [1m[35m (5.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/gists/4
+Completed 302 Found in 9ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/gists/4" for 127.0.0.1 at 2014-02-21 20:10:00 +0100
+Processing by GistsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGist Load (0.1ms)[0m  [1mSELECT "gists".* FROM "gists" WHERE "gists"."id" = ? LIMIT 1[0m  [["id", "4"]]
+  Rendered gists/show.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/gists/4/edit" for 127.0.0.1 at 2014-02-21 20:10:07 +0100
+Processing by GistsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mGist Load (0.2ms)[0m  SELECT "gists".* FROM "gists" WHERE "gists"."id" = ? LIMIT 1  [["id", "4"]]
+  Rendered gists/_form.html.erb (3.8ms)
+  Rendered gists/edit.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/gists/4" for 127.0.0.1 at 2014-02-21 20:10:24 +0100
+Processing by GistsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"56lC/WqtZ7g7dwdLM1JjQg9HEsO0vsIqn1r6wQ9p7Pk=", "gist"=>{"snippet"=>"public class mare{\r\nprivate int z;\r\n}", "lang"=>"java", "description"=>"11"}, "commit"=>"Update Gist", "id"=>"4"}
+  [1m[36mGist Load (0.9ms)[0m  [1mSELECT "gists".* FROM "gists" WHERE "gists"."id" = ? LIMIT 1[0m  [["id", "4"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "gists" SET "snippet" = ?, "updated_at" = ? WHERE "gists"."id" = 4[0m  [["snippet", "public class mare{\r\nprivate int z;\r\n}"], ["updated_at", Fri, 21 Feb 2014 19:10:24 UTC +00:00]]
+  [1m[35m (5.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/gists/4
+Completed 302 Found in 11ms (ActiveRecord: 6.5ms)
+
+
+Started GET "/gists/4" for 127.0.0.1 at 2014-02-21 20:10:24 +0100
+Processing by GistsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGist Load (0.1ms)[0m  [1mSELECT "gists".* FROM "gists" WHERE "gists"."id" = ? LIMIT 1[0m  [["id", "4"]]
+  Rendered gists/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.1ms)
